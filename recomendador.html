@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistente de Projetos</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <header>
@@ -21,7 +21,6 @@
     <main class="container">
         <section class="quiz-container">
             <form id="quizForm">
-                <!-- Pergunta 1 -->
                 <div class="question">
                     <p>1. Qual o seu nível de experiência atual com eletrônica e código?</p>
                     <label><input type="radio" name="q1" value="arduino-facil" required> Iniciante absoluto (nunca programei ou montei circuitos).</label>
@@ -29,7 +28,6 @@
                     <label><input type="radio" name="q1" value="esp-avancado"> Avançado (consigo ler datasheets e criar firmwares).</label>
                 </div>
 
-                <!-- Pergunta 2 -->
                 <div class="question">
                     <p>2. Seu projeto precisa se conectar à internet ou a dispositivos sem fio?</p>
                     <label><input type="radio" name="q2" value="arduino-offline" required> Não, será um projeto totalmente offline.</label>
@@ -37,14 +35,12 @@
                     <label><input type="radio" name="q2" value="esp-moderno"> Sim, preciso de tecnologias como Wi-Fi 6 ou redes Zigbee.</label>
                 </div>
 
-                <!-- Pergunta 3 -->
                 <div class="question">
                     <p>3. Como o projeto será alimentado fisicamente?</p>
                     <label><input type="radio" name="q3" value="arduino-facil" required> Ligado direto no USB do computador ou fonte fixa.</label>
                     <label><input type="radio" name="q3" value="esp-bateria"> Por baterias (precisa de modos de economia extrema de energia).</label>
                 </div>
 
-                <!-- Pergunta 4 -->
                 <div class="question">
                     <p>4. Quantos sensores, atuadores e pinos o seu projeto vai ocupar estimados?</p>
                     <label><input type="radio" name="q4" value="arduino-nano" required> Poucos pinos (um projeto pequeno e compacto).</label>
@@ -52,7 +48,6 @@
                     <label><input type="radio" name="q4" value="arduino-mega"> Muitos pinos (dezenas de sensores ou telas paralelas).</label>
                 </div>
 
-                <!-- Pergunta 5 -->
                 <div class="question">
                     <p>5. O projeto envolve Inteligência Artificial, processamento de imagens ou câmeras?</p>
                     <label><input type="radio" name="q5" value="comum" required> Não, apenas leitura de sensores comuns e motores.</label>
@@ -62,7 +57,6 @@
                 <button type="submit" class="btn btn-submit">Calcular Melhor Opção</button>
             </form>
 
-            <!-- Local onde o resultado vai aparecer dinamicamente -->
             <div id="resultado" class="resultado-box hidden">
                 <h2>Resultado da Análise:</h2>
                 <p id="resultado-texto"></p>
@@ -75,7 +69,7 @@
         <p>&copy; 2026 Guia de Microcontroladores</p>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/quiz.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/quiz.js"></script>
 </body>
 </html>
