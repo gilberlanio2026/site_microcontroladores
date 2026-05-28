@@ -1,42 +1,34 @@
 document.getElementById('quizForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Capturando as respostas do formulário
-    const q1 = document.querySelector('radio[name="q1"]:checked').value;
-    const q2 = document.querySelector('radio[name="q2"]:checked').value;
-    const q3 = document.querySelector('radio[name="q3"]:checked').value;
-    const q4 = document.querySelector('radio[name="q4"]:checked').value;
-    const q5 = document.querySelector('radio[name="q5"]:checked').value;
+    const q1 = document.querySelector('input[name="q1"]:checked').value;
+    const q2 = document.querySelector('input[name="q2"]:checked').value;
+    const q3 = document.querySelector('input[name="q3"]:checked').value;
+    const q4 = document.querySelector('input[name="q4"]:checked').value;
+    const q5 = document.querySelector('input[name="q5"]:checked').value;
 
     let recomendacao = "";
     let explicacao = "";
 
-    // Lógica do Algoritmo de Escolha baseado em árvore de decisão
-    if (q5 === "esp-s3") {
-        recomendacao = "ESP32-S3";
-        explicacao = "Seu projeto necessita de Inteligência Artificial, processamento de imagem ou visão computacional. O ESP32-S3 é a placa ideal do mercado para lidar com essa carga de processamento e possui suporte nativo para câmeras (ESP32-CAM R2).";
-    } else if (q2 === "esp-moderno") {
-        recomendacao = "ESP32-C6";
-        explicacao = "A sua necessidade de conexão em protocolos de ponta (Wi-Fi 6, Zigbee ou Thread) aponta diretamente para o novíssimo ESP32-C6. Perfeito para ecossistemas de automação de automação residencial avançada.";
-    } else if (q2 === "esp-wifi" || q1 === "esp-avancado") {
-        recomendacao = "ESP32 Dev Module (Clássico)";
-        explicacao = "Para projetos que demandam poder de processamento dual-core e conectividade Wi-Fi/Bluetooth padrão para mandar dados para nuvens ou servidores, o ESP32 clássico trará o melhor custo-benefício.";
-    } else if (q4 === "arduino-mega") {
-        recomendacao = "Arduino Mega 2560";
-        explicacao = "Como o seu projeto é offline mas exige o uso massivo de pinos (muitos sensores, atuadores e relés simultâneos), o Arduino Mega oferece a estabilidade e a quantidade exata de conexões que você precisa.";
-    } else if (q4 === "arduino-nano" && q3 === "esp-bateria") {
-        recomendacao = "Arduino Nano";
-        explicacao = "Seu projeto é básico, compacto e vai rodar fora da tomada. O Arduino Nano possui as dimensões perfeitas para caber em cases pequenos consumindo pouca energia rodando de forma offline.";
+    if (q1 === "atendimento") {
+        recomendacao = "ManyChat integrado com IA";
+        explicacao = "Como o seu maior problema é a demora no atendimento, automatizar as respostas do seu Instagram e WhatsApp com um robô inteligente garantirá que nenhum cliente fique sem resposta, salvando vendas preciosas na madrugada ou horários de pico.";
+    } else if (q1 === "dados") {
+        recomendacao = "Copilot IA integrado ao Excel / Google Sheets";
+        explicacao = "Para arrumar a gestão e estoque, use ferramentas integradas de IA em planilhas. Você pode simplesmente colar seus dados brutos de faturamento e pedir via texto para a IA calcular margens de lucro e produtos parados de forma instantânea.";
+    } else if (q3 === "imagem") {
+        recomendacao = "Canva (Magic Design com IA)";
+        explicacao = "Sua preferência por artes visuais pede o Canva IA. Com a ferramenta Magic Design, você digita o segmento da sua loja (ex: 'Loja de Roupas Femininas') e a IA monta automaticamente layouts profissionais prontos para postar.";
+    } else if (q3 === "video") {
+        recomendacao = "CapCut Online (Gerador de Vídeos IA)";
+        explicacao = "Para explodir as vendas por vídeos, use a IA do CapCut. Ela consegue legendar seus vídeos automaticamente, remover ruídos de fundo da sua loja e até aplicar vozes narradoras comerciais que prendem a atenção do cliente.";
     } else {
-        recomendacao = "Arduino UNO R3";
-        explicacao = "Para um projeto focado em componentes padrão, offline e nível iniciante a intermediário, o clássico Arduino UNO R3 é a escolha ideal pela facilidade de conexão de cabos e proteção contra erros de bancada.";
+        recomendacao = "ChatGPT / Gemini (IAs de Texto)";
+        explicacao = "A melhor porta de entrada gratuita para o seu negócio são as IAs conversacionais. Use-as para criar todas as mensagens de cobrança, roteiros de abordagem de clientes e legendas chamativas de vendas para postar diariamente.";
     }
 
-    // Exibindo o resultado na tela
-    document.getElementById('resultado-texto').innerHTML = `<strong>Recomendamos o: ${recomendacao}</strong><br><br>${explicacao}`;
+    document.getElementById('resultado-texto').innerHTML = `<strong>🏆 ${recomendacao}</strong><br><br>${explicacao}`;
     document.getElementById('resultado').classList.remove('hidden');
-    
-    // Rola a página suavemente até o resultado
     document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
 });
 
