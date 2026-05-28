@@ -8,56 +8,65 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-            <h1>Qual o melhor microcontrolador para você?</h1>
-            <p>Responda às perguntas abaixo sinceramente para analisarmos o seu projeto.</p>
+        <div class="container header-layout">
+            <div class="header-info">
+                <a href="index.html" class="btn-back">← Voltar ao Início</a>
+                <h1>Qual o melhor microcontrolador para você?</h1>
+                <p>Responda às perguntas abaixo sinceramente para analisarmos o seu projeto.</p>
+            </div>
+            <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">🌓 Alternar Tema</button>
         </div>
     </header>
 
     <main class="container">
         <section class="quiz-container">
             <form id="quizForm">
+                <!-- Pergunta 1 -->
                 <div class="question">
                     <p>1. Qual o seu nível de experiência atual com eletrônica e código?</p>
                     <label><input type="radio" name="q1" value="arduino-facil" required> Iniciante absoluto (nunca programei ou montei circuitos).</label>
-                    <label><input type="radio" name="q1" value="esp-medio"> Intermediário (já conheço lógica de programação básica e resistores).</label>
-                    <label><input type="radio" name="q1" value="esp-avancado"> Avançado (consigo ler datasheets e criar firmwares complexos).</label>
+                    <label><input type="radio" name="q1" value="esp-medio"> Intermediário (já conheço lógica de programação básica).</label>
+                    <label><input type="radio" name="q1" value="esp-avancado"> Avançado (consigo ler datasheets e criar firmwares).</label>
                 </div>
 
+                <!-- Pergunta 2 -->
                 <div class="question">
                     <p>2. Seu projeto precisa se conectar à internet ou a dispositivos sem fio?</p>
                     <label><input type="radio" name="q2" value="arduino-offline" required> Não, será um projeto totalmente offline.</label>
                     <label><input type="radio" name="q2" value="esp-wifi"> Sim, preciso de Wi-Fi e/ou Bluetooth padrão.</label>
-                    <label><input type="radio" name="q2" value="esp-moderno"> Sim, preciso de tecnologias como Wi-Fi 6 ou redes Zigbee/Thread.</label>
+                    <label><input type="radio" name="q2" value="esp-moderno"> Sim, preciso de tecnologias como Wi-Fi 6 ou redes Zigbee.</label>
                 </div>
 
+                <!-- Pergunta 3 -->
                 <div class="question">
                     <p>3. Como o projeto será alimentado fisicamente?</p>
-                    <label><input type="radio" name="q3" value="arduino-facil"> Ligado direto no USB do computador ou fonte fixa.</label>
-                    <label><input type="radio" name="q3" value="esp-bateria"> Por baterias / Células de lítio (precisa de modos de economia extrema de energia).</label>
+                    <label><input type="radio" name="q3" value="arduino-facil" required> Ligado direto no USB do computador ou fonte fixa.</label>
+                    <label><input type="radio" name="q3" value="esp-bateria"> Por baterias (precisa de modos de economia extrema de energia).</label>
                 </div>
 
+                <!-- Pergunta 4 -->
                 <div class="question">
                     <p>4. Quantos sensores, atuadores e pinos o seu projeto vai ocupar estimados?</p>
-                    <label><input type="radio" name="q4" value="arduino-nano"> Poucos pinos (um projeto pequeno e compacto).</label>
+                    <label><input type="radio" name="q4" value="arduino-nano" required> Poucos pinos (um projeto pequeno e compacto).</label>
                     <label><input type="radio" name="q4" value="arduino-facil"> Quantidade padrão (entre 10 e 15 pinos).</label>
                     <label><input type="radio" name="q4" value="arduino-mega"> Muitos pinos (dezenas de sensores ou telas paralelas).</label>
                 </div>
 
+                <!-- Pergunta 5 -->
                 <div class="question">
                     <p>5. O projeto envolve Inteligência Artificial, processamento de imagens ou câmeras?</p>
-                    <label><input type="radio" name="q5" value="comum"> Não, apenas leitura de sensores comuns e motores.</label>
-                    <label><input type="radio" name="q5" value="esp-s3"> Sim, preciso de reconhecimento de imagem, áudio pesado ou IA local.</label>
+                    <label><input type="radio" name="q5" value="comum" required> Não, apenas leitura de sensores comuns e motores.</label>
+                    <label><input type="radio" name="q5" value="esp-s3"> Sim, preciso de reconhecimento de imagem ou IA local.</label>
                 </div>
 
                 <button type="submit" class="btn btn-submit">Calcular Melhor Opção</button>
             </form>
 
+            <!-- Local onde o resultado vai aparecer dinamicamente -->
             <div id="resultado" class="resultado-box hidden">
                 <h2>Resultado da Análise:</h2>
                 <p id="resultado-texto"></p>
-                <button onclick="reiniciarQuiz()" class="btn">Refazer Teste</button>
+                <button type="button" onclick="reiniciarQuiz()" class="btn" style="margin-top: 15px;">Refazer Teste</button>
             </div>
         </section>
     </main>
@@ -66,6 +75,7 @@
         <p>&copy; 2026 Guia de Microcontroladores</p>
     </footer>
 
+    <script src="js/main.js"></script>
     <script src="js/quiz.js"></script>
 </body>
 </html>

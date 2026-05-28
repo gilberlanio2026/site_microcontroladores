@@ -8,14 +8,18 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-            <h1>Modelos Arduino</h1>
-            <p>Simplicidade, robustez e uma comunidade gigantesca.</p>
+        <div class="container header-layout">
+            <div class="header-info">
+                <a href="index.html" class="btn-back">← Voltar ao Início</a>
+                <h1>Modelos Arduino</h1>
+                <p>Simplicidade, robustez e uma comunidade gigantesca.</p>
+            </div>
+            <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">🌓 Alternar Tema</button>
         </div>
     </header>
 
     <main class="container">
+        <!-- Vitrine de Modelos -->
         <section class="modelos-grid">
             <div class="modelo-item">
                 <h3>Arduino UNO R3</h3>
@@ -35,23 +39,24 @@
             </div>
         </section>
 
+        <!-- Áreas de Aplicação -->
         <h2 class="section-title">Aplicações Práticas</h2>
         <section class="aplicacoes-grid">
-            <div class="app-card aula">
+            <div class="app-card">
                 <h4>Sala de Aula</h4>
                 <ul>
                     <li><strong>Semáforo Interativo:</strong> Aprendizado de lógica de programação e temporização.</li>
                     <li><strong>Robô Segue-Faixa:</strong> Uso de sensores infravermelhos e motores DC.</li>
                 </ul>
             </div>
-            <div class="app-card casa">
+            <div class="app-card">
                 <h4>Em Casa</h4>
                 <ul>
                     <li><strong>Rega Automatizada:</strong> Sensor de umidade ativa bomba d'água em plantas.</li>
                     <li><strong>Alarme de Presença:</strong> Sensor ultrassônico que ativa uma sirene (buzzer).</li>
                 </ul>
             </div>
-            <div class="app-card industria">
+            <div class="app-card">
                 <h4>Na Indústria</h4>
                 <ul>
                     <li><strong>Contador de Peças:</strong> Sensor óptico monitorando esteiras de produção de baixo custo.</li>
@@ -64,5 +69,7 @@
     <footer>
         <p>&copy; 2026 Guia de Microcontroladores</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

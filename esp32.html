@@ -8,14 +8,18 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html" class="btn-back">← Voltar ao Início</a>
-            <h1>Modelos ESP32</h1>
-            <p>Poder de processamento, IoT nativo e alta performance.</p>
+        <div class="container header-layout">
+            <div class="header-info">
+                <a href="index.html" class="btn-back">← Voltar ao Início</a>
+                <h1>Modelos ESP32</h1>
+                <p>Poder de processamento, IoT nativo e alta performance.</p>
+            </div>
+            <button id="theme-toggle" class="btn-theme" aria-label="Alternar tema">🌓 Alternar Tema</button>
         </div>
     </header>
 
     <main class="container">
+        <!-- Vitrine de Modelos -->
         <section class="modelos-grid">
             <div class="modelo-item">
                 <h3>ESP32 Dev Module</h3>
@@ -35,27 +39,28 @@
             </div>
         </section>
 
+        <!-- Áreas de Aplicação -->
         <h2 class="section-title">Aplicações Práticas</h2>
         <section class="aplicacoes-grid">
-            <div class="app-card aula">
+            <div class="app-card">
                 <h4>Sala de Aula</h4>
                 <ul>
-                    <li><strong>Estação Meteorológica IoT:</strong> Alunos coletam dados de clima e enviam para a nuvem (ThinkSpeak).</li>
+                    <li><strong>Estação Meteorológica IoT:</strong> Alunos coletam dados de clima e enviam para a nuvem.</li>
                     <li><strong>Web Server Básico:</strong> Criação de uma página interna para ligar um LED via Wi-Fi.</li>
                 </ul>
             </div>
-            <div class="app-card casa">
+            <div class="app-card">
                 <h4>Em Casa</h4>
                 <ul>
-                    <li><strong>Fechadura Biométrica / Facial:</strong> Utilizando o ESP32-S3 com câmera para abrir portas.</li>
+                    <li><strong>Fechadura Biométrica:</strong> Utilizando o ESP32-S3 com câmera para abrir portas.</li>
                     <li><strong>Central Casa Inteligente:</strong> Integração via Zigbee (ESP32-C6) com assistentes virtuais.</li>
                 </ul>
             </div>
-            <div class="app-card industria">
+            <div class="app-card">
                 <h4>Na Indústria</h4>
                 <ul>
                     <li><strong>Monitoramento de Vibração:</strong> Sensores analisam motores industriais e enviam dados via MQTT.</li>
-                    <li><strong>Rede Mesh de Sensores:</strong> Vários ESP32 comunicando-se entre si em galpões sem sinal de internet estável.</li>
+                    <li><strong>Rede Mesh de Sensores:</strong> Vários ESP32 comunicando-se entre si em galpões industriais.</li>
                 </ul>
             </div>
         </section>
@@ -64,5 +69,7 @@
     <footer>
         <p>&copy; 2026 Guia de Microcontroladores</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
